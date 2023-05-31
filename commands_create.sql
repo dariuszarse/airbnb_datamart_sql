@@ -77,9 +77,9 @@ CREATE TABLE Countries
 CREATE TABLE GuestReviews
 (
   guestreviewID INT  NOT NULL AUTO_INCREMENT,
-  rating        INT  NOT NULL,
-  comment       TEXT NULL    ,
   bookingID     INT  NOT NULL,
+  guestrating        INT  NOT NULL,
+  guestcomment       TEXT NULL    ,
   PRIMARY KEY (guestreviewID)
 );
 
@@ -107,14 +107,22 @@ CREATE TABLE Languages
   PRIMARY KEY (languageID)
 );
 
-CREATE TABLE Messages
+CREATE TABLE MessageRequests
 (
-  messageID   INT      NOT NULL AUTO_INCREMENT,
-  guestID     INT      NOT NULL,
-  hostID      INT      NOT NULL,
-  timesent    DATETIME NOT NULL,
-  messagebody TEXT     NOT NULL,
-  PRIMARY KEY (messageID)
+  messagerequestID   INT      NOT NULL AUTO_INCREMENT,
+  bookingID     INT      NOT NULL,
+  requestsent    DATETIME NOT NULL,
+  requesttext TEXT     NOT NULL,
+  PRIMARY KEY (messagerequestID)
+);
+
+CREATE TABLE MessageReplies
+(
+  messagereplyID   INT      NOT NULL AUTO_INCREMENT,
+  bookingID     INT      NOT NULL,
+  replysent    DATETIME NOT NULL,
+  replytext TEXT     NOT NULL,
+  PRIMARY KEY (messagereplyID)
 );
 
 CREATE TABLE Payment
@@ -149,7 +157,7 @@ CREATE TABLE ProfileImages
 (
   profileimageID INT       NOT NULL AUTO_INCREMENT,
   profileID      INT       NOT NULL,
-  imagedata      LONGBLOB  NOT NULL,
+  imagedata      VARCHAR(100)  NOT NULL,
   PRIMARY KEY (profileimageID)
 );
 
@@ -185,7 +193,7 @@ CREATE TABLE PropertyImages
 (
   propertyimageID INT       NOT NULL AUTO_INCREMENT,
   propertyID      INT       NOT NULL,
-  propertyimage           LONGBLOB NOT NULL,
+  propertyimage   VARCHAR(100) NOT NULL,
   PRIMARY KEY (propertyimageID)
 );
 
@@ -194,7 +202,7 @@ CREATE TABLE PropertyReviews
   propertyreviewID INT  NOT NULL AUTO_INCREMENT,
   bookingID        INT  NOT NULL,
   propertyrating   INT  NOT NULL,
-  comment          TEXT NULL    ,
+  propertycomment  TEXT NULL    ,
   PRIMARY KEY (propertyreviewID)
 );
 

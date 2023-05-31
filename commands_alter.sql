@@ -1,6 +1,3 @@
--- @block select database
-use airbnb;
-
 -- @block altering tables
 ALTER TABLE Profiles
   ADD CONSTRAINT FK_Users_TO_Profiles
@@ -102,15 +99,15 @@ ALTER TABLE VacationTypeAndProperties
     FOREIGN KEY (propertyID)
     REFERENCES Properties (propertyID);
 
-ALTER TABLE Messages
-  ADD CONSTRAINT FK_HostDetails_TO_Messages
-    FOREIGN KEY (hostID)
-    REFERENCES HostDetails (userID);
+ALTER TABLE MessageRequests
+  ADD CONSTRAINT FK_Bookings_TO_MessageRequests
+    FOREIGN KEY (bookingID)
+    REFERENCES Bookings (bookingID);
 
-ALTER TABLE Messages
-  ADD CONSTRAINT FK_GuestDetails_TO_Messages
-    FOREIGN KEY (guestID)
-    REFERENCES GuestDetails (userID);
+ALTER TABLE MessageReplies
+  ADD CONSTRAINT FK_Bookings_TO_MessageReplies
+    FOREIGN KEY (bookingID)
+    REFERENCES Bookings (bookingID);
 
 ALTER TABLE Properties
   ADD CONSTRAINT FK_Price_TO_Properties
