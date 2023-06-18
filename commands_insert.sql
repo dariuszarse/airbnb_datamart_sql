@@ -1,6 +1,4 @@
-use airbnb;
-
--- @block insert raw data
+-- @block insert raw data 
 
 INSERT INTO Accessibility (airport, train, bus)
 VALUES (17, 8, 2), (47, 25, 8), (53, 11, 15), (22, 19, 5), (85, 16, 11), (55, 29, 21), (5, 4, 3), (19, 7, 2), (33, 22, 11), (41, 17, 2), 
@@ -54,12 +52,12 @@ VALUES ('a.fischer@gmail.com', 'Anna', 'Fischer', '01751834928'), ('jonathanhors
 -- @block insert into tables with dependabilities
 
 INSERT INTO Profiles (userID, bio)
-VALUES (1, 'Hi, I love renting out my home in airbnb! Check it out and come visit!'), (2, 'Hi there, my name is Jonathan and I enjoy hiking'), (3, ''), (4, 'My first time on this website, looking for cool places to visit!'), (5, ''),
+VALUES (1, 'Hi, I love traveling and renting out my home as airbnb! Check it out and come visit!'), (2, 'Hi there, my name is Jonathan and I enjoy hiking'), (3, ''), (4, 'My first time on this website, looking for cool places to visit!'), (5, ''),
 (6, 'Hello there! I own several houses and always make sure they are up to the highest standards of customer satisfaction!'), (7, ''), (8, ''), (9, ''), (10, "Hello, I'm Julia. I'm 23 years old and just bought my first house! I love to share it wiht you!"), 
 (11, ''), (12, ''), (13, 'I am a 37 year old mom of 3 and we just love decorating our haunted castle spooky!'), (14, ''), (15, 'Sara here. I travel a lot so airbnb is amazing!'), 
 (16, 'Test test'), (17, 'Not sure what to say. Hi everyone!'), (18, 'I am from austria and love the mountains. Make sure to check out my cabin!'), (19, ''), (20, '');
 
-INSERT INTO ProfileImages (profileID, imagedata)
+INSERT INTO ProfileImages (profileID, profileimage)
 VALUES(1, 'portrait1.jpg'), (2, 'portrait2.jpg'), (3, 'portrait3.jpg'), (4, 'portrait4.jpg'), (5, 'portrait5.jpg'), (6, 'portrait6.jpg'), (7, 'portrait7.jpg'), (8, 'portrait8.jpg'), (9, 'portrait9.jpg'), (10, 'portrait10.jpg'), 
 (11, 'portrait11.jpg'), (12, 'portrait12.jpg'), (13, 'portrait13.jpg'), (14, 'portrait14.jpg'), (15, 'portrait15.jpg'), (16, 'portrait16.jpg'), (17, 'portrait17.jpg'), (18, 'portrait18.jpg'), (19, 'portrait19.jpg'), (20, 'portrait20.jpg');
 
@@ -108,7 +106,8 @@ VALUES (1, 5, 'super clean, everything as promised, would love to come visit aga
 INSERT INTO GuestReviews (bookingID, guestrating, guestcomment)
 VALUES (1, 4, 'quiet guests, left the property in decent condition'), (2, 5, ''), (3, 4, ''), (4, 3, ''), (5, 4, ''), 
 (6, 5, ''), (7, 4, ''), (8, 5, ''), (9, 5, ''), (10, 1, ''), 
-(11, 4, ''), (12, 5, ''), (13, 2, ''), (14, 4, ''), (15, 4, ''),
+(11, 4, ''), (12, 5, ''), (13, 2, 'very messy guest, cant give more than 2
+stars'), (14, 4, ''), (15, 4, ''),
 (16, 5, ''), (17, 5, ''), (18, 4, ''), (19, 2, ''), (20, 3, '');
 
 INSERT INTO MessageRequests (bookingID, requestsent, requesttext)
@@ -120,7 +119,7 @@ VALUES (1, STR_TO_DATE('2023-02-01 10:32:23', '%Y-%m-%d %H:%i:%s'), 'just a quic
 (17, STR_TO_DATE('2023-01-01 05:32:19', '%Y-%m-%d %H:%i:%s'), 'dummy message 13'), (20, STR_TO_DATE('2023-06-30 10:03:23', '%Y-%m-%d %H:%i:%s'), 'dummy message 14');
 
 INSERT INTO MessageReplies (bookingID, replysent, replytext)
-VALUES (1, STR_TO_DATE('2023-02-01 10:37:23', '%Y-%m-%d %H:%i:%s'), 'hi how can I help?'), (1, STR_TO_DATE('2023-02-01 11:21:26', '%Y-%m-%d %H:%i:%s'), 'yeah sure, thats fine'), (1, STR_TO_DATE('2023-02-01 11:25:55', '%Y-%m-%d %H:%i:%s'), 'of course, no worries. see you soon!'), 
+VALUES (1, STR_TO_DATE('2023-02-01 10:37:23', '%Y-%m-%d %H:%i:%s'), 'hi how can I help? it is number 213.'), (1, STR_TO_DATE('2023-02-01 11:21:26', '%Y-%m-%d %H:%i:%s'), 'yeah sure, thats fine'), (1, STR_TO_DATE('2023-02-01 11:25:55', '%Y-%m-%d %H:%i:%s'), 'of course, no worries. see you soon!'), 
 (2, STR_TO_DATE('2023-02-01 11:15:13', '%Y-%m-%d %H:%i:%s'), 'dummy message 1'), (3, STR_TO_DATE('2023-02-01 11:20:59', '%Y-%m-%d %H:%i:%s'), 'dummy message 2'), (4, STR_TO_DATE('2023-04-02 10:32:23', '%Y-%m-%d %H:%i:%s'), 'dummy message 3'), 
 (5, STR_TO_DATE('2023-04-02 10:32:23', '%Y-%m-%d %H:%i:%s'), 'dummy message 4'), (6, STR_TO_DATE('2023-02-01 11:05:23', '%Y-%m-%d %H:%i:%s'), 'dummy message 5'), (7, STR_TO_DATE('2022-04-10 07:12:23', '%Y-%m-%d %H:%i:%s'), 'dummy message 6'), (8, STR_TO_DATE('2023-03-17 19:32:23', '%Y-%m-%d %H:%i:%s'), 'dummy message 7'), 
 (9, STR_TO_DATE('2023-10-07 11:32:23', '%Y-%m-%d %H:%i:%s'), 'dummy message 8'), (10, STR_TO_DATE('2023-01-22 15:21:23', '%Y-%m-%d %H:%i:%s'), 'dummy message 9'), (11, STR_TO_DATE('2022-10-02 16:05:23', '%Y-%m-%d %H:%i:%s'), 'dummy message 10'), (12, STR_TO_DATE('2023-03-12 23:32:07', '%Y-%m-%d %H:%i:%s'), 'dummy message 11'), 
@@ -146,7 +145,7 @@ VALUES (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (
 (2, 11), (2, 12), (2, 13), (2, 14), (2, 15), (2, 16), (2, 17), (2, 18), (2, 19), (2, 20),
 (3, 17), (4, 2), (4, 7), (4, 18), (6, 12), (6, 13), (6, 18);
 
-INSERT INTO AmenitiesAndProperties (amenitiesID, propertyID)
+INSERT INTO AmenitiesAndProperties (propertyID, amenitiesID)
 VALUES (1, 3), (1, 7), (1, 9), (1, 12), (1, 13), (1, 18), (1, 20), (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 7), (2, 9), (2, 10), (2, 11), (2, 12), (2, 14), (2, 15), (2, 16), 
 (2, 18), (2, 19), (2, 20), (3, 2), (3, 4), (3, 9), (3, 12), (3, 13), (3, 16), (3, 18), (4, 5), (4, 7), (4, 12), (5, 5), (5, 19), (6, 8), (6, 9), (6, 19), (7, 8), (7, 19);
 

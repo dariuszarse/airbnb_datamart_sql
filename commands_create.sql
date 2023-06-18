@@ -7,9 +7,9 @@ use airbnb;
 CREATE TABLE Accessibility
 (
   accessibilityID INT NOT NULL AUTO_INCREMENT,
-  airport         INT NULL    ,
-  train           INT NULL    ,
-  bus             INT NULL    ,
+  airport         INT NULL,
+  train           INT NULL,
+  bus             INT NULL,
   PRIMARY KEY (accessibilityID)
 );
 
@@ -33,8 +33,8 @@ CREATE TABLE Amenities
 
 CREATE TABLE AmenitiesAndProperties
 (
-  amenitiesID INT NOT NULL,
-  propertyID  INT NOT NULL
+  propertyID  INT NOT NULL,
+  amenitiesID INT NOT NULL
 );
 
 CREATE TABLE Bookings
@@ -157,7 +157,7 @@ CREATE TABLE ProfileImages
 (
   profileimageID INT       NOT NULL AUTO_INCREMENT,
   profileID      INT       NOT NULL,
-  imagedata      VARCHAR(100)  NOT NULL,
+  profileimage      VARCHAR(100)  NOT NULL,
   PRIMARY KEY (profileimageID)
 );
 
